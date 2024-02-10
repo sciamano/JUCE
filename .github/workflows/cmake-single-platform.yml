@@ -37,3 +37,7 @@ jobs:
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest -C ${{env.BUILD_TYPE}}
 
+    - name: Upload Artefacts
+      uses: actions/upload-artifact@v3
+      with:
+        path: ${{github.workspace}}/build/extras/AudioPluginHost/AudioPluginHost_artefacts/${{env.BUILD_TYPE}}/AudioPluginHost.exe
